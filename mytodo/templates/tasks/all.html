@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/tasks/all.css' %}">
+{% endblock %}
+
+{% block content %}
+    All
+    <input type="text" placeholder="input task and press enter to save">
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <input type="checkbox" name="{{ task.title }}" value="completed">
+                {{ task.title }}
+            </li>
+        {% endfor %}
+    </ul>
+    
+        
+{% endblock %}

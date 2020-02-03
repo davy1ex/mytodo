@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>
+        {% if title %}
+            <title>
+                {{ title }} -
+            </title>
+        {% endif %}
+
+        MyToDo
+
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 menu">
+            <div class="username">
+                <!-- {{ user.username }} -->
+                root
+            </div>
+    
+            <div class="tasks_type">
+                <ul>
+                    <li><a href="#">All</a></li>
+                    <li><a href="#">Today</a></li>
+                    <li><a href="#">Next 7 Days</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Inbox</a></li>
+                </ul>
+            </div>  
+            
+        </div>
+
+        <div class="col-8 tasklist">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    
+</body>
+</html>
