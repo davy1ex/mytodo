@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block title %}
-    {% endblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-    <title>
-        {% if title %}
-            <title>
-                {{ title }} -
-            </title>
-        {% endif %}
+    {% if title %}
+        <title>
+            {{ title }} - MyToDo
+        </title>        
+    {% else %}
+        <title>MyToDo</title>
+    {% endif %}
 
-        MyToDo
-
-    </title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
@@ -38,7 +36,7 @@
                     <li><a href="#">Inbox</a></li>
                 </ul>
             </div>  
-            
+
         </div>
 
         <div class="col-8 tasklist">
