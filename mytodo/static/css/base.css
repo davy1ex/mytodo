@@ -1,5 +1,52 @@
+/* left menu */
 .menu {
     background: #F2F4F7;
+
+    padding-top: 10px;
+
+    /* чтобы покрасилось во весь рост */
     padding-bottom: 100%;
     margin-bottom: -100%;
+    
+    border-right: solid 1px #E0E2E5;
 }
+
+.menu {
+    margin-left: 20px; 
+    margin-right: 20px;
+}
+
+.menu a, .menu a:visited {
+    color: black;
+}
+
+
+.menu .username, .tasklist {
+    padding: 10px 0;
+}
+
+/* end left menu */
+
+
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+
+
+/* task list */
+.title_current_task_list {
+    font-size: 1.7em;
+}
+
+.input_task_field input {
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* end task list */

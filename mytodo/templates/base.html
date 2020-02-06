@@ -40,12 +40,16 @@
         </div>
 
         <div class="col-8 tasklist">
-            {{ title_task_list }}
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <!-- <input type="text" placeholder="input task and press enter to save"> -->
-            </form>
+            <div class="title_current_task_list">
+                {{ title_task_list }}
+            </div>
+            
+            <div class="input_task_field">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                </form>
+            </div>            
                         
             {% block content %}
             {% endblock %}
