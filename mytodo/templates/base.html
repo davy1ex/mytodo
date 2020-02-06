@@ -21,7 +21,7 @@
 
 <body>
     <div class="row">
-        <div class="col-2 menu">
+        <div class="col-2 no-float menu">
             <div class="username">
                 <!-- {{ user.username }} -->
                 root
@@ -40,6 +40,13 @@
         </div>
 
         <div class="col-8 tasklist">
+            {{ title_task_list }}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!-- <input type="text" placeholder="input task and press enter to save"> -->
+            </form>
+                        
             {% block content %}
             {% endblock %}
         </div>
