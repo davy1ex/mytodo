@@ -7,5 +7,5 @@ import tasks.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', tasks.views.all),
-    path('tasks/all/', tasks.views.all),
+    path('tasks/all/', tasks.views.all, name="task_all"),
 ]
