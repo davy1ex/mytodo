@@ -29,11 +29,11 @@
     
             <div class="tasks_type">
                 <ul>
-                    <li><a href="{% url 'task_all' %}">All</a></li>
+                    <li><a href="{% url 'task_all' %}">All {% if title_task_list == "All" %} {{ count }} {% endif %}</a></li>
                     <li><a href="#">Today</a></li>
                     <li><a href="#">Next 7 Days</a></li>
                     <li><a href="#">Calendar</a></li>
-                    <li><a href="#">Inbox</a></li>
+                    <li><a href="{% url 'task_inbox' %}">Inbox {% if title_task_list == "Inbox" %} {{ count }} {% endif %}</a></li>
                 </ul>
             </div>  
 

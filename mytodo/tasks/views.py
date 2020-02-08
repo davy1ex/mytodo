@@ -17,4 +17,9 @@ def all(request):
     else:
         form = AddTaskForm()
 
-    return render(request, "tasks/all.html", {"form": form,"tasks": tasks, "title_task_list": "All"})
+    return render(request, "tasks/all.html", {"form": form,"tasks": tasks, "title_task_list": "All", "count": len(tasks)})
+
+
+def inbox(request):
+    tasks = Task.objects.filter(type_task="inbox")
+    return render(request, "tasks/all.html", {"tasks": tasks, "title_task_list": "Inbox", "count": len(tasks)})
