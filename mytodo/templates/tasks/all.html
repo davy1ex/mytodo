@@ -2,13 +2,14 @@
 {% block head %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/tasks/all.css' %}">
+    <script src="{% static 'js/delete.js' %}"></script>
 {% endblock %}
 
 {% block content %}
     <ul>
         {% for task in tasks %}
             <li>
-                <input type="checkbox" name="{{ task.title }}" value="completed">
+                <input type="checkbox" name="delete" value="{{ task.id }}" value="completed" onclick="delete_task({{ task.id }})">
                 {{ task.title }}
             </li>
         {% endfor %}

@@ -5,14 +5,23 @@ from .models import Task
 from .forms import AddTaskForm
 
 
+def delete(request, task_id):
+    Task.objects.filter(id=task_id).delete()
+    
+    return HttpResponseRedirect('/tasks/all')
+
+
+
+
 def all(request):
     tasks = Task.objects.all()
+
     if request.method == "POST":
         form = AddTaskForm(request.POST)
         
         if form.is_valid():
             Task.objects.create(title=form.cleaned_data['input_field']).save()        
-            return HttpResponseRedirect('/tasks/all')
+            return HttpResponseRedirect('/tasks/all')       
 
     else:
         form = AddTaskForm()
